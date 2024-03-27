@@ -1,0 +1,82 @@
+
+.content-mouse-info {
+  text-align: center;
+  bottom: 2rem;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
+
+  .mouse-icon {
+    margin-left: auto;
+    margin-right: auto;
+    width: 2px;
+    padding: 0.55rem 0.75rem;
+    height: 1.3rem;
+    border: #fff 2px solid;
+    border-radius: 1.2rem;
+    opacity: 0.7;
+    box-sizing: content-box;
+    transition: all .5s;
+  }
+    .mouse-icon:hover{
+      opacity: 1;
+    }
+  .scroller {
+    width: 3px;
+    height: 0.6rem;
+    border-radius: 25%;
+    background-color: #fff;
+    -webkit-animation-name: scroll;
+    animation-name: scroll;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+    animation-iteration-count: infinite;
+  }
+}
+
+.up-down-mobile{
+  animation: up-down-mobile 7s infinite;
+}
+
+@keyframes up-down {
+  0% { 
+    transform: translateY(0); 
+  }
+  100% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes up-down-mobile {
+  0% { 
+    transform: translateY(0); 
+    opacity: 1;
+  }
+  10% { 
+    transform: translateY(-20px); 
+    opacity: 0;
+  }
+  20% { 
+    transform: translateY(0); 
+    opacity: 1;
+  }
+  30% { 
+    transform: translateY(-20px); 
+    opacity: 0;
+  }
+  40% { 
+    transform: translateY(0); 
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 0;
+  }
+}
+
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
