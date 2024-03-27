@@ -69,6 +69,7 @@ export const Profile = () => {
       </>
     );
   };
+  console.log(from);
 
   return (
     <Wrapper name="profile">
@@ -146,16 +147,15 @@ export const Profile = () => {
                 </ButtonLink>
               </div>
 
-              {(from !== "linkedin" && from == null) ||
-                (from == "cv" && (
-                  <ButtonLink
-                    target="_blank"
-                    href="https://www.linkedin.com/in/fabio-alv3s/"
-                  >
-                    <BsLinkedin className="w-4 h-4" />
-                    Linkedin
-                  </ButtonLink>
-                ))}
+              {((from !== "linkedin" && from == null) || from == "cv") && (
+                <ButtonLink
+                  target="_blank"
+                  href="https://www.linkedin.com/in/fabio-alv3s/"
+                >
+                  <BsLinkedin className="w-4 h-4" />
+                  Linkedin
+                </ButtonLink>
+              )}
             </motion.div>
 
             {!welcomeLinkedIn && from == "linkedin" && (
